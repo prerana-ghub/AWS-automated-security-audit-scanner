@@ -209,5 +209,15 @@ The repository contains the main development stages and the final integrated sca
 | `sg_risk_check.py`          | Checks Security Groups for internet-exposed SSH and unrestricted traffic                                                                                                                                             |
 | `rds_risk_check.py`         | Checks RDS instances for public accessibility                                                                                                                                                                        |
 | `scan_report.py`            | Final integrated scanner that performs the S3, IAM MFA, root MFA, Security Group and RDS checks, classifies findings, generates the security report, logs the output to CloudWatch, and sends the report through SNS |
-e you're removing the numbers from the actual files, use those exact five names in the `code/` folder so the README matches.
-```
+
+## Project Files
+
+The repository contains the Python implementation and AWS console screenshots documenting the project.
+
+### Code
+
+The `code/` folder contains the security-check implementations and the final integrated scanner.
+
+### Screenshots
+
+The `screenshots/` folder contains AWS console and email evidence for the implemented components, including Lambda, EventBridge Scheduler, IAM, S3, Security Groups, CloudWatch, SNS, and the generated security audit report.
