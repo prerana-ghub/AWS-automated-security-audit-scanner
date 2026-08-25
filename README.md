@@ -200,7 +200,7 @@ The email contains the complete AWS security audit, including the scan summary, 
 
 ## Project Code
 
-The repository contains the main development stages and the final integrated scanner.
+The repository contains the security-check implementations and the final integrated scanner.
 
 | File                        | Purpose                                                                                                                                                                                                              |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
