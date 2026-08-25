@@ -210,10 +210,6 @@ The repository contains the security-check implementations and the final integra
 | `rds_risk_check.py`         | Checks RDS instances for public accessibility                                                                                                                                                                        |
 | `scan_report.py`            | Final integrated scanner that performs the S3, IAM MFA, root MFA, Security Group and RDS checks, classifies findings, generates the security report, logs the output to CloudWatch, and sends the report through SNS |
 
-## Project Files
-
-The repository contains the Python implementation and AWS console screenshots documenting the project.
-
 ### Code
 
 The `code/` folder contains the security-check implementations and the final integrated scanner.
