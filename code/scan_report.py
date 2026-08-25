@@ -1,4 +1,4 @@
-#final scan report  
+# Performs the complete AWS security scan, generates the audit report, and sends it through SNS
 import json
 import boto3
 import csv
@@ -654,3 +654,6 @@ def lambda_handler(event, context):
             "AWS security audit completed and report sent."
         )
     }
+
+
+
