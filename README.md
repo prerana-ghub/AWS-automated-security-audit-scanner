@@ -159,44 +159,27 @@ The report also provides recommended actions such as:
 
 ## EventBridge Scheduling
 
-Amazon EventBridge Scheduler is configured to trigger the Lambda security scanner automatically.
+Amazon EventBridge Scheduler triggers the Lambda function automatically every 24 hours.
 
-The configured schedule runs the security scan on a daily basis, allowing the audit to be performed without manually invoking the Lambda function.
+This allows the security audit to run without manually invoking the Lambda function.
 
-## CloudWatch Logging
+## CloudWatch
 
-Amazon CloudWatch Logs records the Lambda execution and security audit output.
+Amazon CloudWatch Logs records the Lambda execution, security-check results, findings, generated report, and SNS delivery status.
 
-The logs contain:
+## SNS
 
-* Security check results
-* Detected findings
-* Severity information
-* Generated security report
-* SNS delivery confirmation
+The completed security report is published to the SNS topic and delivered through its email subscription.
 
-This provides visibility into each scanner execution.
-
-## SNS Email Notification
-
-Amazon SNS is configured with a security-alert topic and an email subscription.
-
-After Lambda completes the scan, the generated report is published to the SNS topic.
-
-```text
-Lambda
-   |
-   v
-Security Report
-   |
-   v
-Amazon SNS Topic
-   |
-   v
-Email Notification
 ```
-
-The email contains the complete AWS security audit, including the scan summary, severity counts, individual findings, and recommended actions.
+Lambda
+   ↓
+Security Report
+   ↓
+SNS Topic
+   ↓
+Email
+```
 
 ## Project Code
 
@@ -216,4 +199,4 @@ The `code/` folder contains the security-check implementations and the final int
 
 ### Screenshots
 
-The `screenshots/` folder contains AWS console and email evidence for the implemented components, including Lambda, EventBridge Scheduler, IAM, S3, Security Groups, CloudWatch, SNS, and the generated security audit report.
+The `screenshots/` folder contains shows all the implemented components, including Lambda, EventBridge Scheduler, IAM, S3, Security Groups, CloudWatch, SNS, and the generated security audit report.
